@@ -25,9 +25,9 @@ const Home = () => {
     try {
       const response = await fetch(endpoint);
 
-      // if (!response.ok) {
-      //   throw new Error('Network response was not ok');
-      // }
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
 
       const data = await response.json();
       setFinalData(data.articles);
